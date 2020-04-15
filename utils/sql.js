@@ -1,7 +1,8 @@
-const QUERY_TABLE = (tablename) => `SELECT * FROM ${tablename}`
-const DELETE_TABLE = (tablename,{primaryKey,primaryVal}) => `DELETE FROM user WHERE(${primaryKey}=${primaryVal})`
+const query = require('./query');
 
-module.exports ={
-    QUERY_TABLE,
-    DELETE_TABLE
+module.exports = {
+    //查询表
+    QUERY_TABLE:function (tablename){
+	    return query(`SELECT * FROM ${tablename}`);
+    },
 }
